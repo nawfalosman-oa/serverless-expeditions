@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "media" {
   name = local.bucket_name
 }
-
+#create bucket with the image located in media
 resource "google_storage_bucket_object" "cats" {
   for_each = fileset("${path.module}/${local.bucket_folder}", "*")
 
